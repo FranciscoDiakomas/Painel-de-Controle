@@ -6,6 +6,7 @@
     <title>FranSchool</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js" defer></script>
+    <link rel="shortcut icon" href="icons8-artificial-intelligence-64.png" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -20,35 +21,34 @@
         </article>
 
         <article>
+            <div class="theme">
+                <div class="bolha">
+                    
+                </div>
+            </div>
             <div class="users">
-                <img src="IMG_E0108.JPG" alt="userImg" id="userImg">
+                <a href="#Administrador" class="links">
+                    <img src="IMG_E0108.JPG" alt="userImg" id="userImg">
+                </a> 
             </div>
         </article>
     </header>
+    <div id="flash-msg">
+        Mensagens de controle
+    </div>
     
     <main>
             <nav>
                 <div class="main">
                     <h3>Principal</h3>
                     <hr>
-                    <a href="#inicial" class="active links"  >DashBoard</a><a href="#cursos" class="links">Cursos</a>
-                    <a href="#pagamentos" class="links">Pagamentos</a>
-                    <a href="#salarios" class="links">Salários</a>
-                    
-                </div>
-                <div class="main">
-                    <h3>Formadores</h3>
-                    <hr>
+                    <a href="#inicial" class="active links">DashBoard</a>
+                    <a href="#cursos" class="links">Categorias</a>
+                    <a href="#allcurs" class="links">Cursos</a>
                     <a href="#formadores" class="links">Formadores</a>
-                    <a href="#gerenciarFormadores" class="links">Gerenciamento</a>
-                    
-                </div>
-                <div class="main">
-                    <h3>Alunos</h3>
-                    <hr>
                     <a href="#alunos" class="links">Alunos</a>
-                    <a href="#gerenciarAlunos" class="links">Gerenciamento</a>
-                   
+                    <a href="#pagamentos" class="links">Pagamentos</a>
+                    <a href="#Administrador" class="links">Administrador</a>
                 </div>
 
             </nav>
@@ -97,7 +97,7 @@
                 </div>
                 
                 
-                <h1>Linguagens Usadas</h1>
+                <h1>Raking dos Cursos</h1>
                 <div class="grafico">
                     <div class="linhas">
                         <p>9</p>
@@ -122,13 +122,13 @@
                             <div class="bar cor7">40%</div>
                         </div>
                         <div class="rotolos">
-                            <h3>Algoritmos</h3>
-                            <h3>Git</h3>
-                            <h3>Python</h3>
-                            <h3>Html+css</h3>
-                            <h3>Mysql</h3>
-                            <h3>Node js</h3>
-                            <h3>Javascript</h3>
+                            <h3>Inteligência Artificial</h3>
+                            <h3>Analise de Dados</h3>
+                            <h3>Desktop</h3>
+                            <h3>Mobile</h3>
+                            <h3>Banco de Dados</h3>
+                            <h3>Backend</h3>
+                            <h3>FrrontEnd</h3>
                         </div>
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                         <h4>Tecnologias</h4>
                         <div class="imgs">
                             <img src="icons8-html-48.png" alt=""><img src="icons8-css3-48.png" alt=""><img src="icons8-javascript-48.png"
-                                alt=""><img src="icons8-node-js-48.png" alt=""><img src="icons8-mysql-logo-48.png" alt="">
+                                alt="">
                         </div>
                     
                     </div>
@@ -192,55 +192,364 @@
                         <h3>Analise de Dados</h3>
                         <h4>Tecnologias</h4>
                         <div class="imgs">
-                        <img src="icons8-node-js-48.png" alt=""><img src="icons8-mysql-logo-48.png" alt="">
+                        <img src="icons8-node-js-48.png" alt="">
+                        <img src="icons8-javascript-48.png" alt=""><img src="icons8-mysql-logo-48.png" alt="">
                         </div>
                     
                     </div>
                 </div>
             </section>
-            <section id="pagamentos">
-                <h1>Pagamentos</h1>
-                <div class="navigator">
-                    <button>Verificação</button>
-                    <button>Pagamentos</button>
-                </div>
-                <form method="post">
-                    <input type="email" placeholder="Entre com o seu Email">
-                    <input type="password" name="" id="senha" placeholder="Entre  com a sua senha">
-                    <button type="submit">Buscar</button>
 
-                </form>
-                <div class="credenciais">
-                    <div>
+            <section id="allcurs">
+                <h1>Gerenciamento dos cursos</h1>
+                <div class="navigator">
+                    <button class="active1" id="cadastrarCurso">Cadastrar</button>
+                    <button id="buscarCurso">Buscar</button>
+                    <button id="listarCurso">Listar</button>
+                    <button id="deletarCurso">Deletar</button>
+                    <button id="alterarCurso">Alterar</button>
+                </div>
+                <div class="cadastrar">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Nome do Curso">
+                        <input type="number" placeholder="Preço unitário">
+                        <input type="number" placeholder="Duração">
+                        <input type="text" placeholder="Turma">
+                        <select  id="">
+                            <option value="">Selecione um Hórário</option>
+                            <option value="manhã">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                        </select>
+                        <button type="submit">Cadastrar Curso</button>
+                    </form>
+                </div>
+            <div class="listar hiden">
+                <div class="cur">
+                    
                         <div>
                             <h4>Nome</h4>
                             <p>Nome</p>
                         </div>
                         <div>
-                            <h4>Email</h4>
-                            <p>Email</p>
+                            <h4>Id</h4>
+                            <p>x</p>
                         </div>
                         <div>
-                            <h4>Pagou</h4>
-                            <p>Email</p>
+                            <h4>Turna</h4>
+                            <p>turma</p>
                         </div>
                         <div>
-                            <h4>Dia</h4> 
-                            <p>Email</p>
+                            <h4>Preço</h4>
+                            <p>preco</p>
                         </div>
                         <div>
-                            <h4>Satus</h4>
-                            <p>Email</p>
+                            <h4>Duração</h4>
+                            <p>xmêses</p>
                         </div>
                         <div>
-                            <h4>Satus</h4>
-                            <p>Email</p>
+                            <h4>Número de Alunos</h4>
+                            <p>333</p>
                         </div>
-                    </div>
+                    
 
+                </div>
+                <div class="cur">
+                
+                    <div>
+                        <h4>Nome</h4>
+                        <p>Nome</p>
+                    </div>
+                    <div>
+                        <h4>Id</h4>
+                        <p>x</p>
+                    </div>
+                    <div>
+                        <h4>Turna</h4>
+                        <p>turma</p>
+                    </div>
+                    <div>
+                        <h4>Preço</h4>
+                        <p>preco</p>
+                    </div>
+                    <div>
+                        <h4>Duração</h4>
+                        <p>xmêses</p>
+                    </div>
+                    <div>
+                        <h4>Número de Alunos</h4>
+                        <p>333</p>
+                    </div>
+                
+                </div>
+
+            </div>
+                <div class="Buscar hiden">
+                    <form action="" method="get">
+                        <input type="text" placeholder="Nome do Curso">
+                        <button type="submit">Buscar Curso</button>
+                    </form>
+                    <div class="credenciais">
+                        <div>
+                            <div>
+                                <h4>Nome</h4>
+                                <p>Nome</p>
+                            </div>
+                            <div>
+                                <h4>Turna</h4>
+                                <p>status</p>
+                            </div>
+                            <div>
+                                <h4>Preço</h4>
+                                <p>Mês</p>
+                            </div>
+                            <div>
+                                <h4>Duração</h4>
+                                <p>xmêses</p>
+                            </div>
+                            <div>
+                                <h4>Número de Alunos</h4>
+                                <p>333</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="deletar hiden">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Nome do Curso">
+                        <button type="submit" class="deletarCursoBtn">Deletar Curso</button>
+                    </form>
+                </div>
+                <div class="alterar hiden">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Nome do Curso">
+                        <input type="number" placeholder="Novo Preço unitário">
+                        <input type="number" placeholder="Id do curso">
+                        <input type="number" placeholder="Nova Duração">
+                        <input type="text" placeholder="Nova Turma">
+                        <select id="">
+                            <option value="">Padrão</option>
+                            <option value="manhã">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                        </select>
+                        <button type="submit">Alterar Curso</button>
+                    </form>
                 </div>
 
             </section>
+            <section id="formadores">
+                <h1>Gerenciamento dos Formadores</h1>
+                <div class="navigator">
+                    <button class="active1" id="cadastrarFormador">Cadastrar</button>
+                    <button id="buscarFormador">Buscar</button>
+                    <button id="listarFormador">Listar</button>
+                    <button id="deletarFormador">Deletar</button>
+                    <button id="alterarFormador">Alterar</button>
+                </div>
+                <div class="cadastrarFormador">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Nome do Formador">
+                        <input type="email" placeholder="Email do Formador">
+                        <input type="text" placeholder="Curso">
+                        <input type="number" placeholder="Salário">
+                        <input type="text" placeholder="Turma">
+                        <input type="file" name="foto" id="imagem">
+                        <select id="">
+                            <option value="">Selecione um Hórário</option>
+                            <option value="manhã">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                        </select>
+                        <button type="submit">Cadastrar Formador</button>
+                    </form>
+                </div>
+                <div class="listarFormador hiden">
+                    <div class="cur">
+                        <div>
+                            <h4>Imagem</h4>
+                            <img src="IMG_E0108.JPG" alt="">
+                        </div>
+                
+                        <div>
+                            <h4>Nome</h4>
+                            <p>Nome</p>
+                        </div>
+                        <div>
+                            <h4>Id</h4>
+                            <p>x</p>
+                        </div>
+                        <div>
+                            <h4>Turna</h4>
+                            <p>turma</p>
+                        </div>
+                        <div>
+                            <h4>Salário</h4>
+                            <p>preco</p>
+                        </div>
+                        <div>
+                            <h4>Duração</h4>
+                            <p>xmêses</p>
+                        </div>
+                        <div>
+                            <h4>Número de Alunos</h4>
+                            <p>333</p>
+                        </div>
+                
+                
+                    </div>
+                    <div class="cur">
+                        <div>
+                            <h4>Imagem</h4>
+                            <img src="IMG_E0108.JPG" alt="">
+                        </div>
+                
+                        <div>
+                            <h4>Nome</h4>
+                            <p>Nome</p>
+                        </div>
+                        <div>
+                            <h4>Id</h4>
+                            <p>x</p>
+                        </div>
+                        <div>
+                            <h4>Turna</h4>
+                            <p>turma</p>
+                        </div>
+                        <div>
+                            <h4>Preço</h4>
+                            <p>preco</p>
+                        </div>
+                        <div>
+                            <h4>Duração</h4>
+                            <p>xmêses</p>
+                        </div>
+                        <div>
+                            <h4>Número de Alunos</h4>
+                            <p>333</p>
+                        </div>
+                
+                    </div>
+                
+                </div>
+                <div class="BuscarFormador hiden">
+                    <form action="" method="get">
+                        <input type="text" placeholder="Nome do Formador">
+                        <input type="email" placeholder="Email do Formador">
+                        <button type="submit">Buscar Curso</button>
+                    </form>
+                    <div class="credenciais">
+                        <div>
+                            <div>
+                                <h4>Nome</h4>
+                                <p>Nome</p>
+                            </div>
+                            <div>
+                                <h4>Turna</h4>
+                                <p>status</p>
+                            </div>
+                            <div>
+                                <h4>Preço</h4>
+                                <p>Mês</p>
+                            </div>
+                            <div>
+                                <h4>Duração</h4>
+                                <p>xmêses</p>
+                            </div>
+                            <div>
+                                <h4>Número de Alunos</h4>
+                                <p>333</p>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+                <div class="deletarFormador hiden">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Nome do Formador">
+                        <input type="email" placeholder="Email do Formador">
+                        <button type="submit" class="deletarCursoBtn">Deletar Formador</button>
+                    </form>
+                </div>
+                <div class="alterarFormador hiden">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Novo Nome do Formador">
+                        <input type="number" placeholder="Novo Salário do Formador">
+                        <input type="number" placeholder="Id do Formador">
+                        <input type="text" placeholder="Nova Curso Formador">
+                        <input type="text" placeholder="Nova Turma">
+                        <select id="">
+                            <option value="">Padrão</option>
+                            <option value="manhã">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                        </select>
+                        <button type="submit">Alterar Formador</button>
+                    </form>
+                </div>
+
+            </section>
+
+
+
+            <section id="alunos">
+
+            </section>
+
+            <section id="pagamentos">
+                <h1 id="pagamentoTitle">Verificação</h1>
+                <div class="navigator">
+                    <button id="verificar" class="active1">Verificação</button>
+                    <button id="pagar">Pagamentos</button>
+                    <button id="salario">Salário</button>
+                </div>
+                <div class="verf">
+                    <form method="post" id="form1">
+                        <input type="email" placeholder="Entre com o seu Email">
+                        <input type="password" name="" id="senha" placeholder="Entre  com a sua senha">
+                        <button type="submit">Verificar Acesso</button>
+                    
+                    </form>
+                    
+                </div>
+                <div id="pay" class="hiden">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Entre com nome do Aluno">
+                        <input type="email" placeholder="Entre o seu Emai do Aluno">
+                        <input type="text" placeholder="Entre com o seu Curso">
+                        <input type="text" placeholder="Mês">
+                        <input type="text" placeholder="Curso">
+                        <button type="submit">Pagar Propinas</button>
+                    </form>
+                </div>
+                <div id="salarial" class="hiden">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Entre com nome do Formador">
+                        <input type="email" placeholder="Entre com o Email do Formador">
+                        <input type="text" placeholder="Entre com o seu Curso">
+                        <input type="text" placeholder="Curso">
+                        <select id="">
+                            <option value="">Selecione o horário</option>
+                            <option value="manhã">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                        </select>
+                        <button type="submit">Pagar o Formador</button>
+
+                    </form>
+                </div>
+
+            </section>
+            <section id="Administrador">
+                <div class="userdata">
+                    <img src="IMG_E0108.JPG" alt="">
+                    <div class="ata">
+                        <h3>Nome : Francisco Lombo Diakomas</h3>
+                        <h3>Email: fdiakomas@gmail.com</h3>
+                        <h3>Telefone : 957 777 993</h3>
+                        <h3>Nível : Administrador</h3>
+                    </div>
+                </div>
+
+            </section>
+
+            
         
         </article>
     </main>
