@@ -6,7 +6,7 @@
     <title>FranSchool</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js" defer></script>
-    <link rel="shortcut icon" href="icons8-artificial-intelligence-64.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/icons8-artificial-intelligence-64.png" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -154,7 +154,6 @@
                     <button id="buscarCurso">Buscar</button>
                     <button id="listarCurso">Listar</button>
                     <button id="deletarCurso">Deletar</button>
-                    <button id="alterarCurso">Alterar</button>
                 </div>
                 <div class="cadastrar">
                     <form action="" method="post">
@@ -187,15 +186,6 @@
                         <button type="submit" class="deletarCursoBtn">Deletar Curso</button>
                     </form>
                 </div>
-                <div class="alterar hiden">
-                    <form action="" method="post">
-                        <input type="number" name="" id="" placeholder="Id do urso">
-                        <input type="text" placeholder="Nome do Curso">
-                        <input type="number" placeholder="Novo Preço unitário">
-                        <input type="number" placeholder="Nova Duração">
-                        <button type="submit">Alterar Curso</button>
-                    </form>
-                </div>
 
             </section>
 
@@ -208,7 +198,6 @@
                     <button id="buscarFormador">Buscar</button>
                     <button id="listarFormador">Listar</button>
                     <button id="deletarFormador">Deletar</button>
-                    <button id="alterarFormador">Alterar</button>
                 </div>
                 <div class="cadastrarFormador">
                     <form action="" method="post">
@@ -222,7 +211,7 @@
                             <option value="manhã">Manhã</option>
                             <option value="tarde">Tarde</option>
                         </select>
-                        <button type="submit">Cadastrar Formador</button>
+                        <button type="submit" >Cadastrar Formador</button>
                     </form>
                 </div>
                 <div class="listarFormador hiden">
@@ -250,21 +239,6 @@
                         <button type="submit" class="deletarCursoBtn">Deletar Formador</button>
                     </form>
                 </div>
-                <div class="alterarFormador hiden">
-                    <form action="" method="post">
-                        <input type="text" placeholder="Novo Nome do Formador">
-                        <input type="number" placeholder="Novo Salário do Formador">
-                        <input type="number" placeholder="Id do Formador">
-                        <input type="text" placeholder="Nova Curso Formador">
-                        <input type="text" placeholder="Turma">
-                        <select id="">
-                            <option value="">Selecione novo Período</option>
-                            <option value="manhã">Manhã</option>
-                            <option value="tarde">Tarde</option>
-                        </select>
-                        <button type="submit">Alterar Formador</button>
-                    </form>
-                </div>
 
             </section>
 
@@ -278,7 +252,6 @@
                     <button id="buscarAluno">Buscar</button>
                     <button id="listarAluno">Listar</button>
                     <button id="deletarAluno">Deletar</button>
-                    <button id="alterarAluno">Alterar</button>
                 </div>
                 <div class="cadastrarAluno">
                     <form action="" method="post">
@@ -320,21 +293,6 @@
                         <button type="submit" class="deletarCursoBtn" id="delAlunoBTN">Deletar Aluno</button>
                     </form>
                 </div>
-                <div class="alterarAluno hiden">
-                    <form action="" method="post">
-                        <input type="text" placeholder="Novo Nome do Formador" id="nameUpateAluno">
-                        <input type="number" placeholder="Id do Aluno" id="idUpdateAluno">
-                        <input type="text" placeholder="Novo Curso Aluno" id="cursoUpdateAluno">
-                        <input type="file" name="foto" id="imagemAluno">
-                        <select id="urmaUpdateAluno">
-                            <option value="">Selecione Novo Périodo</option>
-                            <option value="manhã">Manhã</option>
-                            <option value="tarde">Tarde</option>
-                        </select>
-                        <button type="submit" id="updateAluno">Alterar Aluno</button>
-                    </form>
-                </div>
-
             </section>
 
             <section id="pagamentos" class="hiden">
