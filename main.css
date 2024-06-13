@@ -141,7 +141,7 @@ main article{
 }
 article section{
     width: 100%;
-    min-height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -272,13 +272,30 @@ background-color: rgb(4, 140, 208);
     height: 320px;
     gap: 50px;
     margin-left: 50px;
-    margin-top: 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 .linhas{
     display: flex;
     flex-direction: column;
     gap: 10px;
     height: 100%;
+}
+.graficolinha{
+    display: flex;
+    width: 1100px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    margin-right: -100px;
+}
+.graficolinha .rotolos{
+    display: flex;
+    flex-direction: column;
+   
+}
+.graficolinha .rotolos h3{
+    height: 50px;
+    padding-top: 15px;
 }
 .barras{
     display: flex;
@@ -288,6 +305,15 @@ background-color: rgb(4, 140, 208);
     flex-direction: column;
     justify-content: end;
     align-items: end;
+}
+.graficolinha .bar{
+    width: 1000px;
+    height: 50px;
+    
+}
+.graficolinha .brs{
+    display: flex;
+    flex-direction: column;
 }
 .barras .brs{
     display: flex;
@@ -321,7 +347,7 @@ h1{
     color: white;
 }
 .cor2{
-    background-color: rgb(227, 227, 4);
+    background-color: rgb(190, 190, 5);
     height: 100px;
 }
 .cor3{
@@ -345,6 +371,27 @@ h1{
 
     height: 320px;
     
+}
+#ln0{
+    width: 1000px;
+}
+#ln1{
+    width: 900px;
+}
+#ln2{
+    width: 800px;
+}
+#ln3{
+    width: 700px;
+}
+#ln4{
+    width: 600px;
+}
+#ln5{
+    width: 500px;
+}
+#ln6{
+    width: 400px;
 }
 .cursos{
     display: grid;
@@ -393,18 +440,18 @@ input,select{
     border: 1.5px solid  ;
     background-color: transparent;
 }
-.navigator{
+.navigator,.navigator1,.navigator2,.navigator3{
     display: flex;
     gap: 50px;
     padding: 20px;
 }
-.navigator button{
+.navigator button,.navigator1 button,.navigator2 button,.navigator3 button{
     width: 100px;
     padding: 5px;
     background-color: white;
     border: solid 1px ;
 }
-.navigator button.active1{
+.navigator button.active1,.navigator1 button.active1,.navigator2 button.active1,.navigator3 button.active1{
     background-color: rgba(29, 184, 29, 0.926);
     color: white;
 }

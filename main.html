@@ -28,7 +28,7 @@
             </div>
             <div class="users">
                 <a href="#Administrador" class="links">
-                    <img src="IMG_E0108.JPG" alt="userImg" id="userImg">
+                    <img src="images/IMG_E0108.JPG" alt="userImg" id="userImg">
                 </a> 
             </div>
         </article>
@@ -42,19 +42,18 @@
                 <div class="main">
                     <h3>Principal</h3>
                     <hr>
-                    <a href="#inicial" class="active links">DashBoard</a>
-                    <a href="#cursos" class="links">Categorias</a>
-                    <a href="#allcurs" class="links">Cursos</a>
-                    <a href="#formadores" class="links">Formadores</a>
-                    <a href="#alunos" class="links">Alunos</a>
-                    <a href="#pagamentos" class="links">Pagamentos</a>
-                    <a href="#Administrador" class="links">Administrador</a>
+                    <a href="#inicial" class="active links" id="dash">DashBoard</a>
+                    <a href="#allcurs" class="links" id="curs">Cursos</a>
+                    <a href="#formadores" class="links" id="forms">Formadores</a>
+                    <a href="#alunos" class="links" id="alns">Alunos</a>
+                    <a href="#pagamentos" class="links" id="pagamnt">Pagamentos</a>
+                    <a href="#Administrador" class="links" id="adm">Administrador</a>
                 </div>
 
             </nav>
 
         <article id="screen">
-            <section id="inicial">
+            <section id="inicial" class="show">
                 <h1>DashBoard</h1>
                 <div class="paineis">
                     <div class="painel painel1">
@@ -63,7 +62,7 @@
                             <h2>500</h2>
                         </div>
                         <div class="icon">
-                            <img src="icons8-user-48.png" alt="iconAlunos">
+                            <img src="images/icons8-user-48.png" alt="iconAlunos">
                         </div>
                     </div>
                     <div class="painel  painel3">
@@ -72,7 +71,7 @@
                             <h2>6</h2>
                         </div>
                         <div class="icon">
-                            <img src="icons8-frontend-64.png" alt="iconAlunos">
+                            <img src="images/icons8-frontend-64.png" alt="iconAlunos">
                         </div>
                     </div>
                     <div class="painel  painel2">
@@ -81,7 +80,7 @@
                             <h2>21</h2>
                         </div>
                         <div class="icon">
-                            <img src="icons8-businessman-48.png" alt="iconAlunos">
+                            <img src="images/icons8-businessman-48.png" alt="iconAlunos">
                         </div>
                     </div>
                     <div class="painel">
@@ -90,7 +89,7 @@
                             <h2>200.000.00kz</h2>
                         </div>
                         <div class="icon">
-                            <img src="icons8-stack-of-coins-48.png" alt="iconAlunos">
+                            <img src="images/icons8-stack-of-coins-48.png" alt="iconAlunos">
                         </div>
                     </div>
                 
@@ -99,18 +98,6 @@
                 
                 <h1>Raking dos Cursos</h1>
                 <div class="grafico">
-                    <div class="linhas">
-                        <p>9</p>
-                        <p>8</p>
-                        <p>7</p>
-                        <p>6</p>
-                        <p>5</p>
-                        <p>4</p>
-                        <p>3</p>
-                        <p>2</p>
-                        <p>1</p>
-                        <p>0</p>
-                    </div>
                     <div class="barras">
                         <div class="brs">
                             <div class="bar cor1">6%</div>
@@ -132,76 +119,36 @@
                         </div>
                     </div>
                 </div>
-
-            </section>
-            <section id="cursos">
-                <h1>Cursos Disponíveis</h1>
-                <div class="cursos">
-                    <div class="curso">
-                        <img src="codigo.png" alt="imgcurso" class="imgcurso">
-                        <h3>Desenvolvimento Frontend</h3>
-                        <h4>Tecnologias</h4>
-                        <div class="imgs">
-                            <img src="icons8-html-48.png" alt=""><img src="icons8-css3-48.png" alt=""><img src="icons8-javascript-48.png" alt="">
+                <h1>Facturamento Por Ano</h1>
+                <div class="graficolinha">
+                   
+                    <div class="barras">
+                        <div class="brs">
+                            <div class="bar cor1" id="ln0">10.00.000.000.00kz</div>
+                            <div class="bar cor2" id="ln1">700.000.00kz</div>
+                            <div class="bar cor3" id="ln2">600.000.00kz</div>
+                            <div class="bar cor4" id="ln3">500.000.00kz</div>
+                            <div class="bar cor5" id="ln4">350.000.00kz</div>
+                            <div class="bar cor6" id="ln5">250.000.00kz</div>
+                            <div class="bar cor7" id="ln6">150.000.00kz</div>
                         </div>
-
+                        
                     </div>
-                    <div class="curso">
-                        <img src="api.png" alt="imgcurso" class="imgcurso">
-                        <h3>Desenvolvimento Backend</h3>
-                        <h4>Tecnologias</h4>
-                        <div class="imgs">
-                            <img src="icons8-javascript-48.png"
-                                alt=""><img src="icons8-node-js-48.png" alt=""><img src="icons8-mysql-logo-48.png" alt="">
-                        </div>
-                    
-                    </div>
-                    <div class="curso">
-                        <img src="icons8-artificial-intelligence-64.png" alt="imgcurso" class="imgcurso">
-                        <h3>Inteligência Artificial</h3>
-                        <h4>Tecnologias</h4>
-                        <div class="imgs">
-                            <img src="icons8-javascript-48.png" alt=""><img src="icons8-node-js-48.png" alt=""><img src="icons8-mysql-logo-48.png"
-                                alt="">
-                            
-                        </div>
-                    
-                    </div>
-                    <div class="curso">
-                        <img src="florid-crypto-wallet-and-online-banking.gif" alt="imgcurso" class="imgcurso">
-                        <h3>Desenvolvimento Mobile</h3>
-                        <h4>Tecnologias</h4>
-                        <div class="imgs">
-                            <img src="icons8-html-48.png" alt=""><img src="icons8-css3-48.png" alt=""><img src="icons8-javascript-48.png"
-                                alt="">
-                        </div>
-                    
-                    </div>
-                    <div class="curso">
-                        <img src="coworking-male-programmer-writing-program-code.gif" alt="imgcurso" class="imgcurso">
-                        <h3>Desenvolvimento Desktop</h3>
-                        <h4>Tecnologias</h4>
-                        <div class="imgs">
-                            <img src="icons8-html-48.png" alt=""><img src="icons8-css3-48.png" alt=""><img src="icons8-javascript-48.png"
-                                alt="">
-                        </div>
-                    
-                    </div>
-                    <div class="curso">
-                        <img src="icons8-analytics.gif" alt="imgcurso" class="imgcurso">
-                        <h3>Analise de Dados</h3>
-                        <h4>Tecnologias</h4>
-                        <div class="imgs">
-                        <img src="icons8-node-js-48.png" alt="">
-                        <img src="icons8-javascript-48.png" alt=""><img src="icons8-mysql-logo-48.png" alt="">
-                        </div>
-                    
+                    <div class="rotolos">
+                        <h3>2024</h3>
+                        <h3>2023</h3>
+                        <h3>2022</h3>
+                        <h3>2021</h3>
+                        <h3>2020</h3>
+                        <h3>2019</h3>
+                        <h3>2018</h3>
                     </div>
                 </div>
+
             </section>
 
-            <section id="allcurs">
-                <h1>Gerenciamento dos cursos</h1>
+            <section id="allcurs" class="hiden">
+                <h1 id="titulopageCurso">Cadastro de Curso</h1>
                 <div class="navigator">
                     <button class="active1" id="cadastrarCurso">Cadastrar</button>
                     <button id="buscarCurso">Buscar</button>
@@ -214,72 +161,17 @@
                         <input type="text" placeholder="Nome do Curso">
                         <input type="number" placeholder="Preço unitário">
                         <input type="number" placeholder="Duração">
-                        <input type="text" placeholder="Turma">
-                        <select  id="">
-                            <option value="">Selecione um Hórário</option>
-                            <option value="manhã">Manhã</option>
-                            <option value="tarde">Tarde</option>
-                        </select>
                         <button type="submit">Cadastrar Curso</button>
                     </form>
                 </div>
             <div class="listar hiden">
                 <div class="cur">
-                    
-                        <div>
+                    <h4>Id</h4>
                             <h4>Nome</h4>
-                            <p>Nome</p>
-                        </div>
-                        <div>
-                            <h4>Id</h4>
-                            <p>x</p>
-                        </div>
-                        <div>
-                            <h4>Turna</h4>
-                            <p>turma</p>
-                        </div>
-                        <div>
+                            <h4>Turma</h4>
                             <h4>Preço</h4>
-                            <p>preco</p>
-                        </div>
-                        <div>
                             <h4>Duração</h4>
-                            <p>xmêses</p>
-                        </div>
-                        <div>
                             <h4>Número de Alunos</h4>
-                            <p>333</p>
-                        </div>
-                    
-
-                </div>
-                <div class="cur">
-                
-                    <div>
-                        <h4>Nome</h4>
-                        <p>Nome</p>
-                    </div>
-                    <div>
-                        <h4>Id</h4>
-                        <p>x</p>
-                    </div>
-                    <div>
-                        <h4>Turna</h4>
-                        <p>turma</p>
-                    </div>
-                    <div>
-                        <h4>Preço</h4>
-                        <p>preco</p>
-                    </div>
-                    <div>
-                        <h4>Duração</h4>
-                        <p>xmêses</p>
-                    </div>
-                    <div>
-                        <h4>Número de Alunos</h4>
-                        <p>333</p>
-                    </div>
-                
                 </div>
 
             </div>
@@ -288,31 +180,6 @@
                         <input type="text" placeholder="Nome do Curso">
                         <button type="submit">Buscar Curso</button>
                     </form>
-                    <div class="credenciais">
-                        <div>
-                            <div>
-                                <h4>Nome</h4>
-                                <p>Nome</p>
-                            </div>
-                            <div>
-                                <h4>Turna</h4>
-                                <p>status</p>
-                            </div>
-                            <div>
-                                <h4>Preço</h4>
-                                <p>Mês</p>
-                            </div>
-                            <div>
-                                <h4>Duração</h4>
-                                <p>xmêses</p>
-                            </div>
-                            <div>
-                                <h4>Número de Alunos</h4>
-                                <p>333</p>
-                            </div>
-                        </div>
-                    
-                    </div>
                 </div>
                 <div class="deletar hiden">
                     <form action="" method="post">
@@ -322,24 +189,21 @@
                 </div>
                 <div class="alterar hiden">
                     <form action="" method="post">
+                        <input type="number" name="" id="" placeholder="Id do urso">
                         <input type="text" placeholder="Nome do Curso">
                         <input type="number" placeholder="Novo Preço unitário">
-                        <input type="number" placeholder="Id do curso">
                         <input type="number" placeholder="Nova Duração">
-                        <input type="text" placeholder="Nova Turma">
-                        <select id="">
-                            <option value="">Padrão</option>
-                            <option value="manhã">Manhã</option>
-                            <option value="tarde">Tarde</option>
-                        </select>
                         <button type="submit">Alterar Curso</button>
                     </form>
                 </div>
 
             </section>
-            <section id="formadores">
-                <h1>Gerenciamento dos Formadores</h1>
-                <div class="navigator">
+
+
+
+            <section id="formadores" class="hiden">
+                <h1 id="titulopageFormadores">Cadastro de Formador</h1>
+                <div class="navigator1">
                     <button class="active1" id="cadastrarFormador">Cadastrar</button>
                     <button id="buscarFormador">Buscar</button>
                     <button id="listarFormador">Listar</button>
@@ -352,10 +216,9 @@
                         <input type="email" placeholder="Email do Formador">
                         <input type="text" placeholder="Curso">
                         <input type="number" placeholder="Salário">
-                        <input type="text" placeholder="Turma">
                         <input type="file" name="foto" id="imagem">
                         <select id="">
-                            <option value="">Selecione um Hórário</option>
+                            <option value="">Selecione um Período</option>
                             <option value="manhã">Manhã</option>
                             <option value="tarde">Tarde</option>
                         </select>
@@ -364,69 +227,12 @@
                 </div>
                 <div class="listarFormador hiden">
                     <div class="cur">
-                        <div>
-                            <h4>Imagem</h4>
-                            <img src="IMG_E0108.JPG" alt="">
-                        </div>
-                
-                        <div>
                             <h4>Nome</h4>
-                            <p>Nome</p>
-                        </div>
-                        <div>
-                            <h4>Id</h4>
-                            <p>x</p>
-                        </div>
-                        <div>
-                            <h4>Turna</h4>
-                            <p>turma</p>
-                        </div>
-                        <div>
+                            <h4>Fotografia</h4>
+                            <h4>Curso</h4>
+                            <h4>Email</h4>
                             <h4>Salário</h4>
-                            <p>preco</p>
-                        </div>
-                        <div>
-                            <h4>Duração</h4>
-                            <p>xmêses</p>
-                        </div>
-                        <div>
-                            <h4>Número de Alunos</h4>
-                            <p>333</p>
-                        </div>
-                
-                
-                    </div>
-                    <div class="cur">
-                        <div>
-                            <h4>Imagem</h4>
-                            <img src="IMG_E0108.JPG" alt="">
-                        </div>
-                
-                        <div>
-                            <h4>Nome</h4>
-                            <p>Nome</p>
-                        </div>
-                        <div>
-                            <h4>Id</h4>
-                            <p>x</p>
-                        </div>
-                        <div>
-                            <h4>Turna</h4>
-                            <p>turma</p>
-                        </div>
-                        <div>
-                            <h4>Preço</h4>
-                            <p>preco</p>
-                        </div>
-                        <div>
-                            <h4>Duração</h4>
-                            <p>xmêses</p>
-                        </div>
-                        <div>
-                            <h4>Número de Alunos</h4>
-                            <p>333</p>
-                        </div>
-                
+                            <h4>Período</h4>
                     </div>
                 
                 </div>
@@ -434,33 +240,8 @@
                     <form action="" method="get">
                         <input type="text" placeholder="Nome do Formador">
                         <input type="email" placeholder="Email do Formador">
-                        <button type="submit">Buscar Curso</button>
+                        <button type="submit">Buscar Formador</button>
                     </form>
-                    <div class="credenciais">
-                        <div>
-                            <div>
-                                <h4>Nome</h4>
-                                <p>Nome</p>
-                            </div>
-                            <div>
-                                <h4>Turna</h4>
-                                <p>status</p>
-                            </div>
-                            <div>
-                                <h4>Preço</h4>
-                                <p>Mês</p>
-                            </div>
-                            <div>
-                                <h4>Duração</h4>
-                                <p>xmêses</p>
-                            </div>
-                            <div>
-                                <h4>Número de Alunos</h4>
-                                <p>333</p>
-                            </div>
-                        </div>
-                
-                    </div>
                 </div>
                 <div class="deletarFormador hiden">
                     <form action="" method="post">
@@ -475,9 +256,9 @@
                         <input type="number" placeholder="Novo Salário do Formador">
                         <input type="number" placeholder="Id do Formador">
                         <input type="text" placeholder="Nova Curso Formador">
-                        <input type="text" placeholder="Nova Turma">
+                        <input type="text" placeholder="Turma">
                         <select id="">
-                            <option value="">Padrão</option>
+                            <option value="">Selecione novo Período</option>
                             <option value="manhã">Manhã</option>
                             <option value="tarde">Tarde</option>
                         </select>
@@ -489,21 +270,84 @@
 
 
 
-            <section id="alunos">
+            <section id="alunos" class="hiden">
+
+                <h1 id="titulPageAluno">Cadastro de Alunos</h1>
+                <div class="navigator2">
+                    <button class="active1" id="cadastrarAluno">Cadastrar</button>
+                    <button id="buscarAluno">Buscar</button>
+                    <button id="listarAluno">Listar</button>
+                    <button id="deletarAluno">Deletar</button>
+                    <button id="alterarAluno">Alterar</button>
+                </div>
+                <div class="cadastrarAluno">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Nome do Aluno" id="nomeAluno">
+                        <input type="email" placeholder="Email do Aluno" id="emailAluno">
+                        <input type="text" placeholder="Curso" id="cursoAluno">
+                        <input type="file" name="foto" id="imagemAluno">
+                        <input type="date" name="" id="">
+                        <select id="urmaUpdateAluno">
+                            <option value="">Selecione um Périodo</option>
+                            <option value="manhã">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                        </select>
+                        <button type="submit" id="postAluno">Cadastrar Aluno</button>
+                    </form>
+                </div>
+                <div class="listarAluno hiden">
+                    <div class="cur">
+                            <h4>Imagem</h4>
+                            <h4>Nome</h4>
+                            <h4>Email</h4>
+                            <h4>Turna</h4>
+                            <h4>Propina</h4>
+                            <h4>Período</h4>
+                    </div>
+                
+                </div>
+                <div class="BuscarAluno hiden">
+                    <form action="" method="get">
+                        <input type="text" placeholder="Nome do Aluno" id="nomeBuscaAluno">
+                        <input type="email" placeholder="Email do Aluno" id="emailBuscaAluno">
+                        <button type="submit" id="getAluno">Buscar Aluno</button>
+                    </form>
+                </div>
+                <div class="deletarAluno hiden">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Nome do Aluno" id="nomeDelAluno">
+                        <input type="email" placeholder="Email do Aluno" id="emailDelAluno">
+                        <button type="submit" class="deletarCursoBtn" id="delAlunoBTN">Deletar Aluno</button>
+                    </form>
+                </div>
+                <div class="alterarAluno hiden">
+                    <form action="" method="post">
+                        <input type="text" placeholder="Novo Nome do Formador" id="nameUpateAluno">
+                        <input type="number" placeholder="Id do Aluno" id="idUpdateAluno">
+                        <input type="text" placeholder="Novo Curso Aluno" id="cursoUpdateAluno">
+                        <input type="file" name="foto" id="imagemAluno">
+                        <select id="urmaUpdateAluno">
+                            <option value="">Selecione Novo Périodo</option>
+                            <option value="manhã">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                        </select>
+                        <button type="submit" id="updateAluno">Alterar Aluno</button>
+                    </form>
+                </div>
 
             </section>
 
-            <section id="pagamentos">
-                <h1 id="pagamentoTitle">Verificação</h1>
-                <div class="navigator">
+            <section id="pagamentos" class="hiden">
+                <h1 id="pagamentoTitle">Verificação de Credenciais</h1>
+                <div class="navigator3">
                     <button id="verificar" class="active1">Verificação</button>
                     <button id="pagar">Pagamentos</button>
                     <button id="salario">Salário</button>
                 </div>
                 <div class="verf">
                     <form method="post" id="form1">
-                        <input type="email" placeholder="Entre com o seu Email">
-                        <input type="password" name="" id="senha" placeholder="Entre  com a sua senha">
+                        <input type="email" placeholder="Entre com Email">
+                        <input type="text" name="" id="nome" placeholder="Entre  com o nome">
                         <button type="submit">Verificar Acesso</button>
                     
                     </form>
@@ -525,20 +369,15 @@
                         <input type="email" placeholder="Entre com o Email do Formador">
                         <input type="text" placeholder="Entre com o seu Curso">
                         <input type="text" placeholder="Curso">
-                        <select id="">
-                            <option value="">Selecione o horário</option>
-                            <option value="manhã">Manhã</option>
-                            <option value="tarde">Tarde</option>
-                        </select>
                         <button type="submit">Pagar o Formador</button>
 
                     </form>
                 </div>
 
             </section>
-            <section id="Administrador">
+            <section id="Administrador" class="hiden">
                 <div class="userdata">
-                    <img src="IMG_E0108.JPG" alt="">
+                    <img src="images/IMG_E0108.JPG" alt="">
                     <div class="ata">
                         <h3>Nome : Francisco Lombo Diakomas</h3>
                         <h3>Email: fdiakomas@gmail.com</h3>
