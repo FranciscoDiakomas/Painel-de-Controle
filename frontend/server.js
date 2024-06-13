@@ -4,13 +4,13 @@ function Server() {
         const validator = require('validator')
         const cors = require('cors')
         const bodyParser = require('body-parser')
-
+        const path = require('path')
 
         const app = express()
         app.use(express.json())
         app.use(cors({origin:true}))
         app.use(bodyParser.urlencoded({extended:true}))
-        app.use(express.static())
+        app.use(express.static(path.join(__dirname,'public')))
 
 
         const DB = mysql.createConnection({
