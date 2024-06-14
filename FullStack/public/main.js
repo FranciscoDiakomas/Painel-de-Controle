@@ -1,4 +1,238 @@
-window.onload = function () {
+window.onload = async function () {
+
+    //requests
+
+    const Allbtns = document.querySelectorAll("button")
+    Allbtns.forEach((btn)=>{
+        btn.addEventListener("click",(e)=>{
+            e.preventDefault()
+        })
+    })
+
+    async function updateDash() {
+        let response1 =  await fetch("http://localhost:3030/dash")
+        let data1 = await response1.json()
+        let response2 =  await fetch("http://localhost:3030/dash1")
+        let data2 = await response2.json()
+
+
+        let response3 =  await fetch("http://localhost:3030/dash2")
+        let data3 = await response3.json()
+        let totalAluno = document.getElementById("totalAluno").textContent = data1.alunos
+        let totalCursos = document.getElementById("totalCursos").textContent = data2.cursos
+        let totalFormadores = document.getElementById("totalFormadores").textContent = data3.formadores
+        
+        
+    }
+   setInterval(updateDash,10)
+    
+    async function PostCurso() {
+        const nome =  document.getElementById("NomeCadastro").value
+        const preco =  document.getElementById("PrecoCadastro").value
+        const duracao =  document.getElementById("DuracaoCadastro").value
+        let flash = document.getElementById("flash-msg")
+        if(String(nome).length === 0 || String(preco).length === 0 || String(duracao).length === 0){
+           flash.style.display= "flex"
+           flash.style.backgroundColor = "red"
+           flash.textContent ="Preencha todos os campos"
+           setTimeout(()=>{
+            flash.style.display = "none"
+
+           },5000)
+        }else{
+            let body = {
+            'nome' : nome,
+            'preco' : preco,
+            'duracao' : duracao
+        }
+            let result = await fetch("http://localhost:3030/curso",{
+                method:"POST",
+                body : JSON.stringify(body)
+            })
+            let data = await result.json()
+            console.log(data)
+
+        }
+        
+    }
+
+    async function ListarCurso() {
+        setInterval(async()=>{
+
+        },100)
+        let result = await fetch("http://localhost:3030/curso")
+        let data = await result.json()
+        let iterador = 0
+        const loader = document.getElementById("loader")
+        let flash = document.getElementById("flash-msg")
+        const tela = document.getElementsByClassName("listar")[0]
+        tela.innerHTML = `
+            <div class="cur">
+                            
+                            <h4>Id</h4>
+                            <h4>Nome</h4>
+                            <h4>Preço</h4>
+                            <h4>Duração</h4>
+    
+                </div>
+        `
+        loader.style.opacity = 1
+        if(data.msg === "A lista de cursos esta vazia"){
+            flash.style.display = "flex"
+            flash.style.backgroundColor = "red"
+            flash.textContent = "Nenhum curso esta cadastrado"
+
+        }else if(data.msg === "curso cadastrado"){
+            flash.style.display = "flex"
+            flash.style.backgroundColor = "green"
+            flash.textContent = "cursos cadastrado"
+            while(data.cursos.length > iterador){
+            tela.innerHTML += `
+                <div class="cur">
+                            
+                            <h4>${data.cursos[iterador].id}</h4>
+                            <h4>${data.cursos[iterador].nome}</h4>
+                            <h4>${data.cursos[iterador].preco}</h4>
+                            <h4>${data.cursos[iterador].duracao}</h4>
+    
+                </div>
+            `
+            iterador++
+        } 
+        }
+        setTimeout(()=>{
+            flash.style.display = "none"
+        },5000)
+        
+        setTimeout(()=>{
+            loader.style.opacity= 0
+        },2000)
+        
+        
+    }
+
+    async function BuscarCurso() {
+        let iterador = 0
+        let id = Number(document.getElementById("buscarIdCurso").value)
+        const tela = document.getElementById("response")     
+        let flash = document.getElementById("flash-msg")
+        if(String(id).length === 0){
+            flash.style.display = "flex"
+            flash.style.backgroundColor = "red"
+            flash.textContent = "Id em falta"
+            setTimeout(()=>{
+                flash.style.display = "none"
+            },5000)
+
+        }else{
+            const loader = document.getElementById("loader")
+            loader.style.opacity = 1
+            let result = await fetch(`http://localhost:3030/curso/${id}`)
+            tela.innerHTML = ""
+            setTimeout(async()=>{
+            loader.style.opacity = 0
+            let data = await result.json()
+            console.log(data)
+            
+            if(data.msg === "Nenhum curso foi encotrado"){
+                flash.style.display = "flex"
+                flash.style.backgroundColor = "red"
+                flash.textContent = "Nenhum Curso não encotrado"
+                setTimeout(()=>{
+                    flash.style.display = "none"
+
+                },5000)
+
+            }else{
+                flash.style.display = "flex"
+                flash.textContent = "Curso encotrado"
+                flash.style.backgroundColor = "green"
+                setTimeout(()=>{
+                    flash.style.display = "none"
+
+                },5000)
+                while(1 > iterador){
+                tela.innerHTML += `
+                <div class="cur">
+                                
+                                <h4>Id</h4>
+                                <h4>Nome</h4>
+                                <h4>Preço</h4>
+                                <h4>Duração</h4>
+        
+                    </div>
+                    <div class="cur">
+                                
+                                <h4>${data.cursos[iterador].id}</h4>
+                                <h4>${data.cursos[iterador].nome}</h4>
+                                <h4>${data.cursos[iterador].preco}</h4>
+                                <h4>${data.cursos[iterador].duracao}</h4>
+        
+                    </div>
+                `
+                iterador++
+            } 
+            }
+        },2000)
+
+        }
+        
+
+    }
+
+    async function EliminarcarCurso() {
+        let iterador = 0
+        let id = Number(document.getElementById("idDelucrso").value)
+        const tela = document.getElementById("response")
+        let result = await fetch(`http://localhost:3030/curso/${id}`,{method:"DELETE"})
+        const loader = document.getElementById("loader")
+        loader.style.opacity = 1
+        tela.innerHTML = ""
+        let flash = document.getElementById("flash-msg")
+        let data = await result.json()
+        console.log(data.msg)
+        setTimeout(async()=>{
+            loader.style.opacity = 0
+            if(data.msg === "Nenhum curso foi encotrado"){
+                flash.style.display = "flex"
+                flash.style.backgroundColor = "red"
+                flash.textContent = data.msg
+
+            }else{
+                flash.style.display = "flex"
+                flash.style.backgroundColor = "green"
+                flash.textContent = "Curso deletado com sucesso!"
+            }
+            setTimeout(()=>{
+                flash.style.display = "none"
+            },5000)
+            
+        },2000)
+        
+        
+    }
+
+
+
+    const deletarCursoBtn = document.getElementById("deletarCursoBtn")
+    deletarCursoBtn.addEventListener("click",EliminarcarCurso)
+    const Buscar = document.getElementById("buscarCursoBTN")
+    Buscar.addEventListener("click",BuscarCurso)
+    const listarCursosbtn = document.getElementsByClassName("listarCursosbtn")[0]
+    listarCursosbtn.addEventListener("click",ListarCurso)
+    const postCursobtn = document.getElementById("postCursobtn")
+    postCursobtn.addEventListener("click",PostCurso)
+
+
+
+
+
+
+
+
+
+
+
 
     //botões de navegação
     

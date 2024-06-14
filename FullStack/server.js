@@ -4,13 +4,23 @@ function Server() {
         const validator = require('validator')
         const cors = require('cors')
         const bodyParser = require('body-parser')
-
+        const path = require('path')
 
         const app = express()
         app.use(express.json())
-        app.use(cors({origin:true}))
         app.use(bodyParser.urlencoded({extended:true}))
-        app.use(express.static())
+
+    //desativando o cors
+    app.use((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+        next();
+        app.options('*', (req, res) => {
+                res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE, OPTIONS');
+                res.send();
+            }
+        );
+    });
 
 
         const DB = mysql.createConnection({
@@ -30,6 +40,63 @@ function Server() {
             }
         })
         let sql =""
+
+        app.get("/",(req,res)=>{
+            res.json({
+                msg : "welcome!"
+            })
+        })
+        app.get("/dash",(req,res)=>{
+            let sql1  = "select id from alunos;"
+            DB.query(sql1,(err,result)=>{
+                    
+                    if(err){
+                        console,log(err)
+                    }else{
+                        let alunos = result.length
+                     res.json({
+                        alunos : alunos
+                     })
+                        
+                    }
+
+                })  
+          
+        })
+         app.get("/dash1",(req,res)=>{
+            let sql1  = "select id from curso;"
+            DB.query(sql1,(err,result)=>{
+                    
+                    if(err){
+                        console,log(err)
+                    }else{
+                        let cursos = result.length
+                     res.json({
+                        cursos : cursos
+                     })
+                        
+                    }
+
+                })  
+          
+        })
+         app.get("/dash2",(req,res)=>{
+            let sql1  = "select id from formador;"
+            DB.query(sql1,(err,result)=>{
+                    
+                    if(err){
+                        console,log(err)
+                    }else{
+                        let formadores = result.length
+                     res.json({
+                        formadores : formadores
+                     })
+                        
+                    }
+
+                })  
+          
+        })
         app.get("/admin/:senha",(req,res)=>{
             let senha = req.params.senha
             if(String(senha).length === 0){
@@ -99,7 +166,7 @@ function Server() {
                 })
 
             }else{
-                    sql = "insert into curso(nome,preco,duracao) value (?);"
+                    sql = "insert into curso(nome,preco,duracao) values (?);"
                     let valores = [nome,preco,duracao]
                     DB.query(sql,[valores],(err,result)=>{
                     if(err){
@@ -144,11 +211,12 @@ function Server() {
                     }
                 })                
         })
+        
 
         //pegar um curso
         app.get("/curso/:id",(req,res)=>{
-            let id = req.params.id
-            if(!validator.isNumeric(id)|| String(id).length === 0){
+            let id = Number(req.params.id)
+            if(String(id).length === 0){
                 res.send({
                     msg : "O id deve ser um núumero"
                 })

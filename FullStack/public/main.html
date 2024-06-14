@@ -36,7 +36,10 @@
     <div id="flash-msg">
         Mensagens de controle
     </div>
+   
+    <div class="spinner" id="loader">
     
+    </div>
     <main>
             <nav>
                 <div class="main">
@@ -59,7 +62,7 @@
                     <div class="painel painel1">
                         <div class="textos">
                             <h3>Total Alunos</h3>
-                            <h2>500</h2>
+                            <h2 id="totalAluno"></h2>
                         </div>
                         <div class="icon">
                             <img src="images/icons8-user-48.png" alt="iconAlunos">
@@ -68,7 +71,7 @@
                     <div class="painel  painel3">
                         <div class="textos">
                             <h3>Total Cursos</h3>
-                            <h2>6</h2>
+                            <h2 id="totalCursos"></h2>
                         </div>
                         <div class="icon">
                             <img src="images/icons8-frontend-64.png" alt="iconAlunos">
@@ -77,7 +80,7 @@
                     <div class="painel  painel2">
                         <div class="textos">
                             <h3>Total Formadores</h3>
-                            <h2>21</h2>
+                            <h2 id="totalFormadores"></h2>
                         </div>
                         <div class="icon">
                             <img src="images/icons8-businessman-48.png" alt="iconAlunos">
@@ -86,7 +89,7 @@
                     <div class="painel">
                         <div class="textos">
                             <h3>Total Arrecardado</h3>
-                            <h2>200.000.00kz</h2>
+                            <h2 id="">200.000.00kz</h2>
                         </div>
                         <div class="icon">
                             <img src="images/icons8-stack-of-coins-48.png" alt="iconAlunos">
@@ -95,6 +98,7 @@
                 
                 </div>
                 
+              
                 
                 <h1>Raking dos Cursos</h1>
                 <div class="grafico">
@@ -121,7 +125,6 @@
                 </div>
                 <h1>Facturamento Por Ano</h1>
                 <div class="graficolinha">
-                   
                     <div class="barras">
                         <div class="brs">
                             <div class="bar cor1" id="ln0">10.00.000.000.00kz</div>
@@ -152,38 +155,41 @@
                 <div class="navigator">
                     <button class="active1" id="cadastrarCurso">Cadastrar</button>
                     <button id="buscarCurso">Buscar</button>
-                    <button id="listarCurso">Listar</button>
+                    <button id="listarCurso" class="listarCursosbtn">Listar</button>
                     <button id="deletarCurso">Deletar</button>
                 </div>
                 <div class="cadastrar">
-                    <form action="" method="post">
-                        <input type="text" placeholder="Nome do Curso">
-                        <input type="number" placeholder="Preço unitário">
-                        <input type="number" placeholder="Duração">
-                        <button type="submit">Cadastrar Curso</button>
+                    <form>
+                        <input type="text" placeholder="Nome do Curso" id="NomeCadastro">
+                        <input type="number" placeholder="Preço unitário" id="PrecoCadastro">
+                        <input type="number" placeholder="Duração" id="DuracaoCadastro">
+                        <button type="submit" id="postCursobtn">Cadastrar Curso</button>
                     </form>
                 </div>
             <div class="listar hiden">
                 <div class="cur">
-                    <h4>Id</h4>
+                            
+                            <h4>Id</h4>
                             <h4>Nome</h4>
-                            <h4>Turma</h4>
                             <h4>Preço</h4>
                             <h4>Duração</h4>
-                            <h4>Número de Alunos</h4>
+    
                 </div>
 
             </div>
                 <div class="Buscar hiden">
                     <form action="" method="get">
-                        <input type="text" placeholder="Nome do Curso">
-                        <button type="submit">Buscar Curso</button>
+                        <input type="number" placeholder="ID do Curso" id="buscarIdCurso">
+                        <button type="submit" id="buscarCursoBTN">Buscar Curso</button>
                     </form>
+                    <div id="response">
+
+                    </div>
                 </div>
                 <div class="deletar hiden">
                     <form action="" method="post">
-                        <input type="text" placeholder="Nome do Curso">
-                        <button type="submit" class="deletarCursoBtn">Deletar Curso</button>
+                        <input type="number" placeholder="Id do curso" id="idDelucrso">
+                        <button type="submit" class="deletarCursoBtn" id="deletarCursoBtn">Deletar Curso</button>
                     </form>
                 </div>
 
