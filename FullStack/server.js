@@ -32,26 +32,19 @@ function Server() {
         DB.connect((err)=>{
             if(err){
                 console.table({
-                    msg : "Erro ao se connectar com bancos",
-                    error : err
+                    msg : "Erro ao se connectar com o banco de dados!",
                 })
             }else{
                 console.log("Connectado ao Banco de Dados com Sucesso!")
-            }
-        })
-        let sql =""
 
-        app.get("/",(req,res)=>{
-            res.json({
-                msg : "welcome!"
-            })
-        })
-        app.get("/dash",(req,res)=>{
+
+
+            app.get("/dash",(req,res)=>{
             let sql1  = "select id from alunos;"
             DB.query(sql1,(err,result)=>{
                     
                     if(err){
-                        console,log(err)
+                        console.log(err)
                     }else{
                         let alunos = result.length
                     res.json({
@@ -551,6 +544,16 @@ function Server() {
                 })          
             }
         })       
+            }
+        })
+
+
+        app.get("/",(req,res)=>{
+            res.json({
+                msg : "welcome!"
+            })
+        })
+        
 
         app.listen(3030,(err)=>{
             if(err){
