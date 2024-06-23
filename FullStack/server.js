@@ -54,16 +54,16 @@ function Server() {
                         console,log(err)
                     }else{
                         let alunos = result.length
-                     res.json({
+                    res.json({
                         alunos : alunos
-                     })
+                })
                         
                     }
 
                 })  
-          
+        
         })
-         app.get("/dash1",(req,res)=>{
+        app.get("/dash1",(req,res)=>{
             let sql1  = "select id from curso;"
             DB.query(sql1,(err,result)=>{
                     
@@ -71,16 +71,15 @@ function Server() {
                         console,log(err)
                     }else{
                         let cursos = result.length
-                     res.json({
+                    res.json({
                         cursos : cursos
-                     })
+                    })
                         
                     }
 
                 })  
-          
         })
-         app.get("/dash2",(req,res)=>{
+        app.get("/dash2",(req,res)=>{
             let sql1  = "select id from formador;"
             DB.query(sql1,(err,result)=>{
                     
@@ -88,14 +87,13 @@ function Server() {
                         console,log(err)
                     }else{
                         let formadores = result.length
-                     res.json({
+                    res.json({
                         formadores : formadores
-                     })
+                    })
                         
                     }
 
-                })  
-          
+                })
         })
         app.get("/admin/:senha",(req,res)=>{
             let senha = req.params.senha

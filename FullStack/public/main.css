@@ -67,6 +67,7 @@ main article.dark{
 main nav.dark{
     background-color: rgb(59, 59, 59);
     color: white;
+    
 }
 .main h3.dark{
     color: white;
@@ -174,6 +175,9 @@ nav .main{
     border:transparent;
     background-color: transparent;
     align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .spinner{
     display: flex;
