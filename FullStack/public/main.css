@@ -311,6 +311,9 @@ background-color: rgb(4, 140, 208);
     gap: 10px;
     height: 100%;
 }
+.bar{
+    animation: surgir 2s linear;
+}
 .graficolinha{
     display: flex;
     width: 1100px;
@@ -340,6 +343,14 @@ background-color: rgb(4, 140, 208);
     width: 1000px;
     height: 50px;
     
+}
+@keyframes surgir {
+    from{
+        height: 0px;
+    }
+    to{
+        height: 100%px;
+    }
 }
 .graficolinha .brs{
     display: flex;
